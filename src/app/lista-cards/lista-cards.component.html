@@ -1,13 +1,18 @@
 <div class="container">
-  <div class="card" *ngFor="let user of users.slice(page * pageSize, page * pageSize + pageSize)">
-    <img class="card-img-top" src="{{ user.picture }}" alt="{{ user.name }}">
-    <div class="card-body">
-      <h5 class="card-title">{{ user.name }}</h5>
-      <p class="card-text">{{ user.city }}, {{ user.state }}</p>
-      <button class="btn btn-primary">Detalhes</button>
+  <div class="card card-grey" *ngFor="let user of usersToShow">
+    <div class="card-content">
+      <img src="{{ user.picture }}" alt="{{ user.name }}">
+      <h3>{{ user.name }}</h3>
+      <p>{{ user.city }}, {{ user.state }}</p>
+      <button class="btn btn-orange" [ngClass]="{'btn-orange': true}">Detalhes</button>
     </div>
   </div>
+
+
 </div>
+
+
+
 <div class="button-container">
   <button class="btn btn-primary" [disabled]="!hasPrev" (click)="handlePrev()">Esquerdo</button>
   <button class="btn btn-primary" [disabled]="!hasNext" (click)="handleNext()">Direito</button>

@@ -9,6 +9,13 @@
   margin-right: 20px;
 }
 
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .card-img-top {
   width: 100%;
   height: 200px;
@@ -19,4 +26,11 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+.btn-orange {
+  background-color: orange;
+  color: white;
+}
+.card-grey {
+  background-color: #f2f2f2;
 }
