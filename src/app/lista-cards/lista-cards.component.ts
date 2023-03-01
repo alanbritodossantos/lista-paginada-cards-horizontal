@@ -32,6 +32,7 @@ interface ApiResponse {
 export class ListaCardsComponent implements OnInit {
 
   users: User[] = [];
+  usersToShow: User[] = [];
   page = 0;
   pageSize = 3;
   hasNext = false;
@@ -55,8 +56,11 @@ export class ListaCardsComponent implements OnInit {
   }
 
   updatePage() {
+    const start = this.page * this.pageSize;
+    const end = start + this.pageSize;
+    this.usersToShow = this.users.slice(start, end);
     this.hasPrev = this.page > 0;
-    this.hasNext = this.page * this.pageSize + this.pageSize < this.users.length;
+    this.hasNext = end < this.users.length;
   }
 
   handlePrev() {
@@ -70,3 +74,4 @@ export class ListaCardsComponent implements OnInit {
   }
 
 }
+
